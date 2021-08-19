@@ -1,4 +1,4 @@
-package id.duende.example
+package com.remedi.example
 
 import io.flutter.embedding.android.FlutterActivity
 
