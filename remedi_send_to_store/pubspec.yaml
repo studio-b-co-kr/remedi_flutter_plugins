@@ -1,0 +1,19 @@
+name: remedi_send_to_store
+version: 0.0.1
+
+environment:
+  sdk: ">=2.12.2 <3.0.0"
+  flutter: ">=2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.remedi.send_to_store
+        pluginClass: RemediSendToStorePlugin
+      ios:
+        pluginClass: RemediSendToStorePlugin
