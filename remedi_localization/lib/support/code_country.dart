@@ -51,6 +51,6 @@ extension ExtensionCountryCode on String {
   }
 
   String get countryFlag {
-    return 'flags/${this.toLowerCase()}.png';
+    return 'assets/flags/${this.toLowerCase()}.png';
   }
 }

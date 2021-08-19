@@ -1,75 +1,16 @@
-# Country List Pick Example
+# remedi_localization_example
 
 Demonstrates how to use the remedi_localization plugin.
 
-### Example
+## Getting Started
 
-```dart
-import 'package:remedi_localization/remedi_localization.dart';
-import 'package:flutter/material.dart';
+This project is a starting point for a Flutter application.
 
-void main() => runApp(MyApp());
+A few resources to get you started if this is your first Flutter project:
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-class _MyAppState extends State<MyApp> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Country Code Pick'),
-          backgroundColor: Colors.amber,
-        ),
-        body: Center(
-          child: CountryListPick(
-            appBar: AppBar(
-              backgroundColor: Colors.blue,
-              title: Text('Choisir un pays'),
-            ),
-            // if you need custome picker use this
-            // pickerBuilder: (context, CountryCode countryCode){
-            //   return Row(
-            //     children: [
-            //       Image.asset(
-            //         countryCode.flagUri,
-            //         package: 'remedi_localization',
-            //       ),
-            //       Text(countryCode.code),
-            //       Text(countryCode.dialCode),
-            //     ],
-            //   );
-            // },
-            theme: CountryTheme(
-              isShowFlag: true,
-              isShowTitle: true,
-              isShowCode: true,
-              isDownIcon: true,
-              showEnglishName: true,
-            ),
-            initialSelection: '+62',
-            onChanged: (CountryCode code) {
-              print(code.name);
-              print(code.code);
-              print(code.dialCode);
-              print(code.flagUri);
-            },
-            // Whether to allow the widget to set a custom UI overlay
-            useUiOverlay: true,
-            // Whether the country list should be wrapped in a SafeArea
-            useSafeArea: false
-          ),
-        ),
-      ),
-    );
-  }
-}
-```
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
