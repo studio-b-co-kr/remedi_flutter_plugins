@@ -1,11 +1,11 @@
 # Country List Pick Example
 
-Demonstrates how to use the country_list_pick plugin.
+Demonstrates how to use the remedi_localization plugin.
 
 ### Example
 
 ```dart
-import 'package:country_list_pick/country_list_pick.dart';
+import 'package:remedi_localization/remedi_localization.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
             //     children: [
             //       Image.asset(
             //         countryCode.flagUri,
-            //         package: 'country_list_pick',
+            //         package: 'remedi_localization',
             //       ),
             //       Text(countryCode.code),
             //       Text(countryCode.dialCode),

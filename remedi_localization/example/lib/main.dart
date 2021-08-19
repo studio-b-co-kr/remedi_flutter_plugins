@@ -1,4 +1,4 @@
-import 'package:country_list_pick/remedi_localization.dart';
+import 'package:remedi_localization/remedi_localization.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 
-public class SwiftCountryListPickPlugin: NSObject, FlutterPlugin {
+public class SwiftRemediLocalizationPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "country_list_pick", binaryMessenger: registrar.messenger())
-    let instance = SwiftCountryListPickPlugin()
+    let channel = FlutterMethodChannel(name: "remedi_localization", binaryMessenger: registrar.messenger())
+    let instance = SwiftRemediLocalizationPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

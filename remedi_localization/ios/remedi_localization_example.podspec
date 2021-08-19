@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint country_list_pick.podspec' to validate before publishing.
+# Run `pod lib lint remedi_localization_example.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'country_list_pick'
+  s.name             = 'remedi_localization_example'
   s.version          = '0.0.1'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC

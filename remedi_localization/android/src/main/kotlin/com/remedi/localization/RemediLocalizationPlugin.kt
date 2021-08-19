@@ -1,4 +1,4 @@
-package id.duende.country_list_pick
+package com.remedi.localization
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -8,11 +8,11 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 
-/** CountryListPickPlugin */
-public class CountryListPickPlugin: FlutterPlugin, MethodCallHandler {
+/** RemediLocalizationPlugin */
+public class RemediLocalizationPlugin: FlutterPlugin, MethodCallHandler {
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    val channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "country_list_pick")
-    channel.setMethodCallHandler(CountryListPickPlugin());
+    val channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "remedi_localization")
+    channel.setMethodCallHandler(RemediLocalizationPlugin());
   }
 
   // This static function is optional and equivalent to onAttachedToEngine. It supports the old
@@ -27,8 +27,8 @@ public class CountryListPickPlugin: FlutterPlugin, MethodCallHandler {
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
-      val channel = MethodChannel(registrar.messenger(), "country_list_pick")
-      channel.setMethodCallHandler(CountryListPickPlugin())
+      val channel = MethodChannel(registrar.messenger(), "remedi_localization")
+      channel.setMethodCallHandler(RemediLocalizationPlugin())
     }
   }
 

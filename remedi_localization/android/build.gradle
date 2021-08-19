@@ -1,4 +1,4 @@
-group 'id.duende.country_list_pick'
+group 'com.remedi.localization'
 version '1.0-SNAPSHOT'
 
 buildscript {

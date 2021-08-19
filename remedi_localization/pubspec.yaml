@@ -13,6 +13,12 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-
   assets:
     - flags/
+  plugin:
+    platforms:
+      android:
+        package: com.remedi.localization
+        pluginClass: RemediLocalizationPlugin
+      ios:
+        pluginClass: RemediLocalizationPlugin

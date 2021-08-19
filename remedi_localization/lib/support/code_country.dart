@@ -1,4 +1,4 @@
-import 'package:country_list_pick/support/code_countrys.dart';
+import 'package:remedi_localization/support/code_countrys.dart';
 
 mixin ToAlias {}
 
