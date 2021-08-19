@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="remedi_example_wrapped_korean_text" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="filePath" value="$PROJECT_DIR$/remedi_wrapped_korean_text/example/lib/main.dart" />
+    <method v="2" />
+  </configuration>
+</component>
