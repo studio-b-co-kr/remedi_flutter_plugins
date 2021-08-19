@@ -1,7 +1,6 @@
 name: remedi_localization_example
 description: Demonstrates how to use the remedi_localization plugin.
 version: 0.0.1+1
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
