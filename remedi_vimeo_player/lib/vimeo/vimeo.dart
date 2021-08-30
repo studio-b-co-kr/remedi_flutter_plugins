@@ -2,8 +2,6 @@ import 'package:remedi_vimeo_player/vimeo/auth/auth_api_service.dart';
 import 'package:remedi_vimeo_player/vimeo/auth/none_auth_api_service.dart';
 import 'package:remedi_vimeo_player/vimeo/vimeo_video.dart';
 
-import 'vimeo_error.dart';
-
 class Vimeo {
   final String videoId;
   final String? accessKey;
@@ -28,11 +26,11 @@ extension ExtensionVimeo on Vimeo {
         await AuthApiService().getVimeoData(accessKey: accessKey!, id: videoId);
 
     try {
-      return VimeoVideo.fromJsonAuth(
+      return await VimeoVideo.fromJsonAuth(
           videoId: videoId,
           accessKey: accessKey!,
           json: (res as Map<String, dynamic>));
-    } on VimeoError catch (e) {
+    } catch (e) {
       return e;
     }
   }
@@ -42,7 +40,7 @@ extension ExtensionVimeo on Vimeo {
 
     try {
       return await VimeoVideo.fromJsonNoneAuth(res as Map<String, dynamic>);
-    } on VimeoError catch (e) {
+    } catch (e) {
       return e;
     }
   }

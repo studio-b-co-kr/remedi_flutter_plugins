@@ -16,10 +16,11 @@ class VimeoVideo {
     required this.sources,
   });
 
-  static Future<VimeoVideo> fromJsonAuth(
-      {required String videoId,
-      required String accessKey,
-      required Map<String, dynamic> json}) async {
+  static Future<VimeoVideo> fromJsonAuth({
+    required String videoId,
+    required String accessKey,
+    required Map<String, dynamic> json,
+  }) async {
     if (json.keys.contains("error")) {
       throw VimeoError.fromJsonAuth(json);
     }
@@ -41,7 +42,7 @@ class VimeoVideo {
               file: VimeoSource(
                 height: json['height'],
                 width: json['width'],
-                url: Uri.parse(body['m3u8_playback_url'] ),
+                url: Uri.parse(body['m3u8_playback_url']),
               ),
             )
           ]);
