@@ -24,6 +24,7 @@ class _VimeoExampleState extends State<VimeoExample> {
     if (res is VimeoError) {
       return res;
     }
+
     bool autoPlay = false;
     if (res is VimeoVideo) {
       vimeoVideo = res;
@@ -32,6 +33,7 @@ class _VimeoExampleState extends State<VimeoExample> {
         betterPlayerDataSource: BetterPlayerDataSource(
           BetterPlayerDataSourceType.network,
           vimeoVideo!.videoUrl.toString(),
+          liveStream: res.isLive,
         ),
       );
     }

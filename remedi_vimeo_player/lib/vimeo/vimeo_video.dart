@@ -16,13 +16,35 @@ class VimeoVideo {
     required this.sources,
   });
 
-  factory VimeoVideo.fromJsonAuth(Map<String, dynamic> json) {
+  static Future<VimeoVideo> fromJsonAuth(
+      {required String videoId,
+      required String accessKey,
+      required Map<String, dynamic> json}) async {
     if (json.keys.contains("error")) {
       throw VimeoError.fromJsonAuth(json);
     }
 
     if (json['embed']?['badges']['live']['streaming'] ?? false) {
-      return VimeoVideo(liveEvent: true, sources: []);
+      Uri uri =
+          Uri.parse("https://api.vimeo.com/me/videos/$videoId/m3u8_playback");
+      var response =
+          await http.get(uri, headers: {"Authorization": "Bearer $accessKey"});
+      var body = jsonDecode(response.body);
+
+      return VimeoVideo(
+          width: json['width'],
+          height: json['height'],
+          liveEvent: true,
+          sources: [
+            _VimeoQualityFile(
+              quality: _VimeoQualityFile.hls,
+              file: VimeoSource(
+                height: json['height'],
+                width: json['width'],
+                url: Uri.parse(body['m3u8_playback_url'] ),
+              ),
+            )
+          ]);
     }
 
     var jsonFiles = (json['files']) as List<dynamic>;
@@ -138,13 +160,13 @@ extension ExtensionVimeoVideo on VimeoVideo {
 class VimeoSource {
   final int height;
   final int width;
-  final double fps;
+  final double? fps;
   final Uri url;
 
   VimeoSource({
     required this.height,
     required this.width,
-    required this.fps,
+    this.fps,
     required this.url,
   });
 
