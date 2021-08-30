@@ -1,6 +1,6 @@
 name: remedi_vimeo_player
 description: Vimeo player without iframe
-version: 0.0.1
+version: 0.0.2+1
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 import 'package:remedi_vimeo_player/vimeo/vimeo_error.dart';
 
 class VimeoVideo {
@@ -48,29 +51,46 @@ class VimeoVideo {
     );
   }
 
-  factory VimeoVideo.fromJsonNoneAuth(Map<String, dynamic> json) {
+  static Future<VimeoVideo> fromJsonNoneAuth(Map<String, dynamic> json) async {
     if (json.keys.contains("message")) {
       throw VimeoError.fromJsonNoneAuth(json);
     }
-
-    var files = List<_VimeoQualityFile?>.from(json['request']['files']
-            ['progressive']
-        .map<_VimeoQualityFile?>((element) {
-      return _VimeoQualityFile(
-        quality: element['quality'],
-        file: VimeoSource(
-          width: element['width'],
-          height: element['height'],
-          fps: element['fps'] is double
-              ? element['fps']
-              : (element['fps'] as int).toDouble(),
-          url: Uri.parse(element['url']),
-        ),
-      );
-    })).toList();
-
+    late var files;
+    bool isLive = json['video']['live_event'] != null;
+    if (json['request']['files']['hls'] != null) {
+      var hls = json['request']['files']['hls'];
+      var response = jsonDecode(
+          (await http.get(Uri.parse(hls['cdns']['fastly_live']['json_url'])))
+              .body);
+      Uri url = Uri.parse(response['url'] as String);
+      files = [
+        _VimeoQualityFile(
+            quality: 'hls',
+            file: VimeoSource(
+                height: json['video']['height'],
+                width: json['video']['width'],
+                fps: json['video']['fps'],
+                url: url))
+      ];
+    } else {
+      files = List<_VimeoQualityFile?>.from(json['request']['files']
+              ['progressive']
+          .map<_VimeoQualityFile?>((element) {
+        return _VimeoQualityFile(
+          quality: element['quality'],
+          file: VimeoSource(
+            width: element['width'],
+            height: element['height'],
+            fps: element['fps'] is double
+                ? element['fps']
+                : (element['fps'] as int).toDouble(),
+            url: Uri.parse(element['url']),
+          ),
+        );
+      })).toList();
+    }
     return VimeoVideo(
-        liveEvent: (json['video']['live_event'] as bool?) ?? false,
+        liveEvent: isLive,
         width: json['video']['width'],
         height: json['video']['height'],
         sources: files);

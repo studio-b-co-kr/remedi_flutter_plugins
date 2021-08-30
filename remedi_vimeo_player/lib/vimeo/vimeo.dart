@@ -36,7 +36,7 @@ extension ExtensionVimeo on Vimeo {
     var res = await NoneAuthApiService().getVimeoData(id: videoId);
 
     try {
-      return VimeoVideo.fromJsonNoneAuth(res as Map<String, dynamic>);
+      return await VimeoVideo.fromJsonNoneAuth(res as Map<String, dynamic>);
     } catch (e) {
       return e;
     }

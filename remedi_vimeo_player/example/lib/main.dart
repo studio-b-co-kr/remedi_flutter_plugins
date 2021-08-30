@@ -16,19 +16,19 @@ class _VimeoExampleState extends State<VimeoExample> {
 
   Future<dynamic> initVimeo() async {
     var res = await Vimeo(
-      "your vimeo video id",
+      "594430025",
       // optional
-      accessKey: "your vimeo accessKey",
+      // accessKey: "your vimeo accessKey",
     ).vimeo;
 
     if (res is VimeoError) {
       return res;
     }
-
+    bool autoPlay = false;
     if (res is VimeoVideo) {
       vimeoVideo = res;
       controller = BetterPlayerController(
-        BetterPlayerConfiguration(),
+        BetterPlayerConfiguration(autoPlay: res.isLive || autoPlay),
         betterPlayerDataSource: BetterPlayerDataSource(
           BetterPlayerDataSourceType.network,
           vimeoVideo!.videoUrl.toString(),
