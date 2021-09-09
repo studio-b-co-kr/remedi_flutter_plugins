@@ -1,4 +1,7 @@
 
+## 0.0.3
+* add homepage and repository
+
 ## 0.0.2
 * Support live stream (private/public)
 
