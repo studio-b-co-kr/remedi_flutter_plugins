@@ -1,4 +1,10 @@
 
+## 0.1.1
+* documentation formatting.
+
+## 0.1.0
+* add documentation.
+
 ## 0.0.3
 * add homepage and repository
 
