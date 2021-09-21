@@ -20,4 +20,8 @@
 
 
   We use better player to play vimeo.
-  'VimeoVideo' provide .mp4 and .m3u8 url. So you want to use other player, you can do.
+  
+  'VimeoVideo' class provide .mp4 and .m3u8 url.
+  
+  So you want to use other player, you can do.
+
