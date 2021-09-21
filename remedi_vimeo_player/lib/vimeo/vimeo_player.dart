@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:remedi_vimeo_player/vimeo/vimeo_video.dart';
 
+/// Vimeo player.
 class VimeoPlayer extends StatefulWidget {
   final VimeoVideo vimeoVideo;
   final BetterPlayerController videoController;

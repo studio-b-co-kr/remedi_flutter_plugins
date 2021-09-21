@@ -3,7 +3,10 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:remedi_vimeo_player/vimeo/vimeo_error.dart';
 
+/// this get private video data from vimeo server.
 class AuthApiService {
+  /// id : video id
+  /// accessKey : your vimeo account access key.
   Future<dynamic> getVimeoData(
       {required String id, required String accessKey}) async {
     Uri uri = Uri.parse("https://api.vimeo.com/videos/$id");

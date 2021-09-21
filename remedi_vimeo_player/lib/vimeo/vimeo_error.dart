@@ -1,3 +1,4 @@
+/// Error on getting vimeo meta data from vimeo server.
 class VimeoError extends Error {
   final String? error;
   final String? link;

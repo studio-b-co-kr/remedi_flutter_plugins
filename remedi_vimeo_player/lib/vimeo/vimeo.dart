@@ -1,7 +1,7 @@
 import 'package:remedi_vimeo_player/vimeo/data/remote/auth_api_service.dart';
 import 'package:remedi_vimeo_player/vimeo/data/remote/none_auth_api_service.dart';
 import 'package:remedi_vimeo_player/vimeo/vimeo_video.dart';
-
+/// Vimeo Class provides functions to get vimeo data.
 class Vimeo {
   final String videoId;
   final String? accessKey;
@@ -13,6 +13,7 @@ class Vimeo {
 }
 
 extension ExtensionVimeo on Vimeo {
+  /// get video meta data from vimeo server.
   Future<dynamic> get video async {
     if (accessKey?.isEmpty ?? true) {
       return _noneAuth;
@@ -21,6 +22,7 @@ extension ExtensionVimeo on Vimeo {
     return _auth;
   }
 
+  /// get private video meta data from vimeo server
   Future<dynamic> get _auth async {
     try {
       var res = await AuthApiService()
@@ -34,6 +36,7 @@ extension ExtensionVimeo on Vimeo {
     }
   }
 
+  /// get public video meta data from vimeo server
   Future<dynamic> get _noneAuth async {
     try {
       var res = await NoneAuthApiService().getVimeoData(id: videoId);
