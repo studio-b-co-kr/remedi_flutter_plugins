@@ -1,3 +1,5 @@
+## 0.1.2
+* add codes to handle some error cases.
 
 ## 0.1.1
 * documentation formatting.
