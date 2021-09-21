@@ -1,6 +1,6 @@
 name: remedi_vimeo_player
 description: Vimeo player without iframe
-version: 0.0.3+1
+version: 0.1.0
 homepage: 'https://github.com/studio-b-co-kr/remedi_flutter_plugins'
 repository: 'https://github.com/studio-b-co-kr/remedi_flutter_plugins'
 
@@ -15,7 +15,7 @@ dependencies:
     sdk: flutter
 
   # video player
-  better_player: ^0.0.72
+  better_player: ^0.0.74
   # http
   http: ^0.13.3
 

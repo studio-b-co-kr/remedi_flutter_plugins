@@ -1,5 +1,5 @@
-import 'package:remedi_vimeo_player/vimeo/auth/auth_api_service.dart';
-import 'package:remedi_vimeo_player/vimeo/auth/none_auth_api_service.dart';
+import 'package:remedi_vimeo_player/vimeo/data/remote/auth_api_service.dart';
+import 'package:remedi_vimeo_player/vimeo/data/remote/none_auth_api_service.dart';
 import 'package:remedi_vimeo_player/vimeo/vimeo_video.dart';
 
 class Vimeo {
@@ -13,7 +13,7 @@ class Vimeo {
 }
 
 extension ExtensionVimeo on Vimeo {
-  Future<dynamic> get vimeo async {
+  Future<dynamic> get video async {
     if (accessKey?.isEmpty ?? true) {
       return _noneAuth;
     }

@@ -55,14 +55,22 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
     );
 
     if (orientation == Orientation.portrait) {
-      SystemChrome.setEnabledSystemUIOverlays(
-          [SystemUiOverlay.top, SystemUiOverlay.bottom]);
+      SystemChrome.setEnabledSystemUIMode(
+        SystemUiMode.manual,
+        overlays: [
+          SystemUiOverlay.top,
+          SystemUiOverlay.bottom,
+        ],
+      );
       return Container(
         width: MediaQuery.of(context).size.width,
         child: child,
       );
     } else {
-      SystemChrome.setEnabledSystemUIOverlays([]);
+      SystemChrome.setEnabledSystemUIMode(
+        SystemUiMode.manual,
+        overlays: [],
+      );
       return Container(
         height: MediaQuery.of(context).size.height,
         child: child,

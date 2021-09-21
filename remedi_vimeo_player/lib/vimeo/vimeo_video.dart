@@ -80,7 +80,7 @@ class VimeoVideo {
     }
     late var files;
     bool isLive = json['video']['live_event'] != null;
-    if (json['request']['files']['hls'] != null) {
+    if (isLive) {
       var hls = json['request']['files']['hls'];
       var response = jsonDecode(
           (await http.get(Uri.parse(hls['cdns']['fastly_live']['json_url'])))

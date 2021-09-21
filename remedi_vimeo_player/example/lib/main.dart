@@ -16,10 +16,9 @@ class _VimeoExampleState extends State<VimeoExample> {
 
   Future<dynamic> initVimeo() async {
     var res = await Vimeo(
-      "594430025",
-      // optional
-      // accessKey: "your vimeo accessKey",
-    ).vimeo;
+      "your vimeo video id",
+      // accessKey: "(optional) your vimeo accessKey",
+    ).video;
 
     if (res is VimeoError) {
       return res;
