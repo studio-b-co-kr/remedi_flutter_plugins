@@ -22,10 +22,9 @@ extension ExtensionVimeo on Vimeo {
   }
 
   Future<dynamic> get _auth async {
-    var res =
-        await AuthApiService().getVimeoData(accessKey: accessKey!, id: videoId);
-
     try {
+      var res = await AuthApiService()
+          .getVimeoData(accessKey: accessKey!, id: videoId);
       return await VimeoVideo.fromJsonAuth(
           videoId: videoId,
           accessKey: accessKey!,
@@ -36,9 +35,8 @@ extension ExtensionVimeo on Vimeo {
   }
 
   Future<dynamic> get _noneAuth async {
-    var res = await NoneAuthApiService().getVimeoData(id: videoId);
-
     try {
+      var res = await NoneAuthApiService().getVimeoData(id: videoId);
       return await VimeoVideo.fromJsonNoneAuth(res as Map<String, dynamic>);
     } catch (e) {
       return e;
