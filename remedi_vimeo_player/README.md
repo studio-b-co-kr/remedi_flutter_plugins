@@ -10,9 +10,11 @@
 
   a. Create a instance of Vimeo class, it keep vimeo video id and access key.
   
-  b. If the vod or hls is public,
+  b. If the vod or hls is public, do not need to pass access key.
   
-  c. Play the vod or live streaming using .mp4 or .hls
+  c. 'video' getter give .mp4 url or .hls url of the vimeo video
+  
+  d. Play the vod or live streaming using the url.
   
 
 
