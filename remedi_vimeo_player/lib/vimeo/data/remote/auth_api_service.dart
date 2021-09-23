@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:remedi_vimeo_player/vimeo/vimeo_error.dart';
 
-/// this get private video data from vimeo server.
+/// Getting data of private video from vimeo server.
 class AuthApiService {
   /// id : video id
   /// accessKey : your vimeo account access key.

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:remedi_vimeo_player/remedi_vimeo_player.dart';
 
-/// this get public video data from vimeo server.
+/// Getting data of public video from vimeo server.
 class NoneAuthApiService {
   /// id : video id
   Future<dynamic> getVimeoData({required String id}) async {
