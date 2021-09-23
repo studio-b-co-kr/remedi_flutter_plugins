@@ -1,3 +1,6 @@
+## 0.1.4
+* update better player version. to fix ios build error on swift 5.5
+
 ## 0.1.3
 * disable web support
 
