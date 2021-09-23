@@ -1,3 +1,6 @@
+## 0.1.6
+* migrate better player version to 0.0.73#2
+
 ## 0.1.5
 * migrate better player version to 0.0.73
 
