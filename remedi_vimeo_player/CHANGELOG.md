@@ -1,3 +1,6 @@
+## 0.1.3
+* disable web support
+
 ## 0.1.2
 * add codes to handle some error cases.
 
