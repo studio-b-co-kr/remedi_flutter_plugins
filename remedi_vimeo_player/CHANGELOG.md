@@ -1,3 +1,6 @@
+## 0.1.5
+* migrate better player version to 0.0.73
+
 ## 0.1.4
 * update better player version. to fix ios build error on swift 5.5
 
