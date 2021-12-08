@@ -15,10 +15,10 @@ class _VimeoExampleState extends State<VimeoExample> {
   BetterPlayerController? controller;
 
   Future<dynamic> initVimeo() async {
-    var res = await Vimeo(
-      "your vimeo video id",
-      // accessKey: "(optional) your vimeo accessKey",
-    ).video;
+    var res = await Vimeo.fromUrl(
+      Uri.parse('video or event url on vimeo domain'),
+      accessKey: "Your Vimeo access key",
+    ).load;
 
     if (res is VimeoError) {
       return res;

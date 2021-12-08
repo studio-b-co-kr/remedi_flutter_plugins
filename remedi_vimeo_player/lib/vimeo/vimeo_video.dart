@@ -16,7 +16,7 @@ class VimeoVideo {
     required this.sources,
   });
 
-  static Future<VimeoVideo> fromJsonAuth({
+  static Future<VimeoVideo> fromJsonVideoWithAuth({
     required String videoId,
     required String accessKey,
     required Map<String, dynamic> json,
@@ -74,7 +74,8 @@ class VimeoVideo {
     );
   }
 
-  static Future<VimeoVideo> fromJsonNoneAuth(Map<String, dynamic> json) async {
+  static Future<VimeoVideo> fromJsonVideoWithoutAuth(
+      Map<String, dynamic> json) async {
     if (json.keys.contains("message")) {
       throw VimeoError.fromJsonNoneAuth(json);
     }
@@ -118,6 +119,23 @@ class VimeoVideo {
         height: json['video']['height'],
         sources: files);
   }
+
+  factory VimeoVideo.fromJsonLiveEvent(json) {
+    var ret = VimeoVideo(
+        liveEvent: true,
+        height: json[0]['streamable_clip']['height'],
+        width: json[0]['streamable_clip']['width'],
+        sources: [
+          _VimeoQualityFile(
+              quality: _VimeoQualityFile.hls,
+              file: VimeoSource(
+                height: json[0]['streamable_clip']['height'],
+                width: json[0]['streamable_clip']['width'],
+                url: Uri.parse(json[1]['m3u8_playback_url']),
+              ))
+        ]);
+    return ret;
+  }
 }
 
 extension ExtensionVimeoVideo on VimeoVideo {
@@ -159,14 +177,14 @@ extension ExtensionVimeoVideo on VimeoVideo {
 }
 
 class VimeoSource {
-  final int height;
-  final int width;
+  final int? height;
+  final int? width;
   final double? fps;
   final Uri url;
 
   VimeoSource({
-    required this.height,
-    required this.width,
+    this.height,
+    this.width,
     this.fps,
     required this.url,
   });
@@ -180,7 +198,11 @@ class VimeoSource {
     );
   }
 
-  int get size => height > width ? height : width;
+  int? get size => (height == null || width == null)
+      ? null
+      : height! > width!
+          ? height
+          : width;
 }
 
 class _VimeoQualityFile {
