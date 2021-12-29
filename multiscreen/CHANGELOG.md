@@ -1,3 +1,5 @@
+## 3.0.1
+support dart sdk from 2.12.0
 ## 3.0.0
 - support android embed v2
 ## 2.0.0

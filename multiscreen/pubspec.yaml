@@ -1,12 +1,12 @@
 name: multiscreen
 description: Support multiscreen(different resolution and size of display) for mobile application.
-version: 3.0.0
+version: 3.0.1
 homepage: 'https://github.com/studio-b-co-kr/remedi_flutter_plugins'
 repository: 'https://github.com/studio-b-co-kr/remedi_flutter_plugins'
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.2.0"
 
 dependencies:
   flutter:
