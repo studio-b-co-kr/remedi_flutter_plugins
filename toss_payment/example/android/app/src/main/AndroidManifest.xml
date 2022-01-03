@@ -1,0 +1,126 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.example">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <queries>
+        <!-- 토스 -->
+        <package android:name="viva.republica.toss" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="supertoss" />
+        </intent>
+        <!-- 삼성카드 -->
+        <package android:name="kr.co.samsungcard.mpocket" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="mpocket.online.ansimclick" />
+        </intent>
+        <!-- 현대카드 -->
+        <package android:name="com.hyundaicard.appcard" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="hdcardappcardansimclick" />
+        </intent>
+        <!-- 현대카드공인인증서 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="smhyundaiansimclick" />
+        </intent>
+        <!-- 우리카드앱카드 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="wooripay" />
+        </intent>
+        <!-- 신한카드앱카드 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="shinhan-sr-ansimclick" />
+        </intent>
+        <!-- 신한카드공인인증서 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="smshinhanansimclick" />
+        </intent>
+        <!-- 국민카드앱카드 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="kb-acp" />
+        </intent>
+        <!-- 롯데카드모바일결제 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="lottesmartpay" />
+        </intent>
+        <!-- 롯데카드앱카드 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="lotteappcard" />
+        </intent>
+        <!-- 하나카드앱카드 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="cloudpay" />
+        </intent>
+        <!-- 농협카드-앱카드 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="nhappvardansimclick" />
+        </intent>
+        <!-- 농협카드공인인증서 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="nonghyupcardansimclick" />
+        </intent>
+        <!-- 씨티카드공인인증서 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="citicardappkr" />
+        </intent>
+        <!-- ISP모바일 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="ispmobile" />
+        </intent>
+    </queries>
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="example"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme" />
+            <!-- Displays an Android View that continues showing the launch screen
+                 Drawable until Flutter paints its first frame, then this splash
+                 screen fades out. A splash screen is useful to avoid any visual
+                 gap between the end of Android's launch screen and the painting of
+                 Flutter's first frame. -->
+            <meta-data
+                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+                android:resource="@drawable/launch_background" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+</manifest>
