@@ -1,3 +1,0 @@
-loadSuccessUrl() {}
-
-loadFailUrl() {}
