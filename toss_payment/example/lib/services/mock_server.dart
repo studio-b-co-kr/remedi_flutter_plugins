@@ -1,8 +1,8 @@
 import 'dart:developer' as dev;
 import 'dart:io';
 
-import 'package:example/models/payment_request.dart';
-import 'package:example/services/html.dart';
+import 'package:toss_payment_example/models/payment_request.dart';
+import 'package:toss_payment_example/services/html.dart';
 
 class MockServer {
   static const clientKey = "test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq";

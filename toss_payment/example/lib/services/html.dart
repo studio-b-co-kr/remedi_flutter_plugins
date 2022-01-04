@@ -1,4 +1,4 @@
-import 'package:example/models/payment_request.dart';
+import 'package:toss_payment_example/models/payment_request.dart';
 
 class PaymentHtml {
   static String generate(PaymentRequest request) {

@@ -1,5 +1,5 @@
-import 'package:example/models/product.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:toss_payment_example/models/product.dart';
 
 class ProductWidget extends StatelessWidget {
   final Product product;
