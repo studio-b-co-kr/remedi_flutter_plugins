@@ -1,3 +1,6 @@
+## 0.2.1
+ add Widget dispose and tap close callbacks
+
 ## 0.2.0
  add WebView callback to class PaymentWebView
 

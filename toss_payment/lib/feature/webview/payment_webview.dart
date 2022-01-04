@@ -13,12 +13,16 @@ class PaymentWebView extends StatefulWidget {
   final Uri paymentRequestUrl;
   final Function(String url)? onPageStarted;
   final Function(String url)? onPageFinished;
+  final Function()? onDisposed;
+  final Function()? onTapCloseButton;
 
   const PaymentWebView({
     Key? key,
     this.title,
     this.onPageStarted,
     this.onPageFinished,
+    this.onDisposed,
+    this.onTapCloseButton,
     required this.paymentRequestUrl,
   }) : super(key: key);
 
@@ -41,9 +45,7 @@ class _PaymentWebViewState extends State<PaymentWebView> {
         elevation: 0,
         actions: [
           InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
+            onTap: widget.onTapCloseButton,
             child: Container(
               padding: const EdgeInsets.all(16),
               child: Icon(
@@ -83,5 +85,13 @@ class _PaymentWebViewState extends State<PaymentWebView> {
         javascriptMode: JavascriptMode.unrestricted,
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    if (widget.onDisposed != null) {
+      widget.onDisposed!();
+    }
+    super.dispose();
   }
 }
