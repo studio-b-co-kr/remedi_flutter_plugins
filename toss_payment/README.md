@@ -158,9 +158,10 @@ PaymentWebView(title: "결제 페이지 타이틀", paymentRequestUrl: Uri.parse
 
 ## Additional information
 
-#### Notice!
+#### !!Notice!!
  * example 앱 내에 Mock Server를 Web Page 구현해 두었습니다. 실제로 사용하실 때는 Web Page를 작성하셔서 사용해야 합니다.
 
-#### Roadmap 
+##### Roadmap 
   a. Test Code.
+  
   b. Etc.
