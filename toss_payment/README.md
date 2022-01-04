@@ -150,12 +150,17 @@ and the Flutter guide for
 
 ## Usage
 
+"PaymentWebView" 을 통해서 결제창과 연동할 수 있습니다.
+
 ```dart
 PaymentWebView(title: "결제 페이지 타이틀", paymentRequestUrl: Uri.parse("결제 웹 페이지 주소"))
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+#### Notice!
+ * example 앱 내에 Mock Server를 Web Page 구현해 두었습니다. 실제로 사용하실 때는 Web Page를 작성하셔서 사용해야 합니다.
+
+#### Roadmap 
+  a. Test Code.
+  b. Etc.
