@@ -65,95 +65,87 @@ and the Flutter guide for
   
   android/app/main/AndroidManifest.xml
   ```dart
-  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.example">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-    <queries>
-        <!-- 토스 -->
-        <package android:name="viva.republica.toss" />
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="supertoss" />
-        </intent>
-        <!-- 삼성카드 -->
-        <package android:name="kr.co.samsungcard.mpocket" />
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="mpocket.online.ansimclick" />
-        </intent>
-        <!-- 현대카드 -->
-        <package android:name="com.hyundaicard.appcard" />
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="hdcardappcardansimclick" />
-        </intent>
-        <!-- 현대카드공인인증서 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="smhyundaiansimclick" />
-        </intent>
-        <!-- 우리카드앱카드 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="wooripay" />
-        </intent>
-        <!-- 신한카드앱카드 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="shinhan-sr-ansimclick" />
-        </intent>
-        <!-- 신한카드공인인증서 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="smshinhanansimclick" />
-        </intent>
-        <!-- 국민카드앱카드 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="kb-acp" />
-        </intent>
-        <!-- 롯데카드모바일결제 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="lottesmartpay" />
-        </intent>
-        <!-- 롯데카드앱카드 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="lotteappcard" />
-        </intent>
-        <!-- 하나카드앱카드 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="cloudpay" />
-        </intent>
-        <!-- 농협카드-앱카드 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="nhappvardansimclick" />
-        </intent>
-        <!-- 농협카드공인인증서 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="nonghyupcardansimclick" />
-        </intent>
-        <!-- 씨티카드공인인증서 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="citicardappkr" />
-        </intent>
-        <!-- ISP모바일 -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="ispmobile" />
-        </intent>
-    </queries>
-    ...
-  </manifest>
-
+  <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+  <queries>
+      <!-- 토스 -->
+      <package android:name="viva.republica.toss" />
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="supertoss" />
+      </intent>
+      <!-- 삼성카드 -->
+      <package android:name="kr.co.samsungcard.mpocket" />
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="mpocket.online.ansimclick" />
+      </intent>
+      <!-- 현대카드 -->
+      <package android:name="com.hyundaicard.appcard" />
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="hdcardappcardansimclick" />
+      </intent>
+      <!-- 현대카드공인인증서 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="smhyundaiansimclick" />
+      </intent>
+      <!-- 우리카드앱카드 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="wooripay" />
+      </intent>
+      <!-- 신한카드앱카드 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="shinhan-sr-ansimclick" />
+      </intent>
+      <!-- 신한카드공인인증서 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="smshinhanansimclick" />
+      </intent>
+      <!-- 국민카드앱카드 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="kb-acp" />
+      </intent>
+      <!-- 롯데카드모바일결제 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="lottesmartpay" />
+      </intent>
+      <!-- 롯데카드앱카드 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="lotteappcard" />
+      </intent>
+      <!-- 하나카드앱카드 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="cloudpay" />
+      </intent>
+      <!-- 농협카드-앱카드 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="nhappvardansimclick" />
+      </intent>
+      <!-- 농협카드공인인증서 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="nonghyupcardansimclick" />
+      </intent>
+      <!-- 씨티카드공인인증서 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="citicardappkr" />
+      </intent>
+      <!-- ISP모바일 -->
+      <intent>
+          <action android:name="android.intent.action.VIEW" />
+          <data android:scheme="ispmobile" />
+      </intent>
+  </queries>
   ```
 
 ## Usage
