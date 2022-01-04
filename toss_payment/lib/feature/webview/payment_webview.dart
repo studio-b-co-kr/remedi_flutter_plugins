@@ -11,10 +11,14 @@ import 'package:webview_flutter/webview_flutter.dart';
 class PaymentWebView extends StatefulWidget {
   final String? title;
   final Uri paymentRequestUrl;
+  final Function(String url)? onPageStarted;
+  final Function(String url)? onPageFinished;
 
   const PaymentWebView({
     Key? key,
     this.title,
+    this.onPageStarted,
+    this.onPageFinished,
     required this.paymentRequestUrl,
   }) : super(key: key);
 
@@ -52,9 +56,8 @@ class _PaymentWebViewState extends State<PaymentWebView> {
       ),
       body: WebView(
         initialUrl: widget.paymentRequestUrl.toString(),
-        onPageStarted: (url) {
-          dev.log(url, name: "WebView");
-        },
+        onPageStarted: widget.onPageStarted,
+        onPageFinished: widget.onPageFinished,
         navigationDelegate: (request) async {
           Uri uri = Uri.parse(request.url);
           if (uri.scheme == 'http' ||

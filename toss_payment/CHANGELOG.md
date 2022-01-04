@@ -1,3 +1,6 @@
+## 0.2.0
+ add WebView callback to class PaymentWebView
+
 ## 0.1.2
  update change log
 

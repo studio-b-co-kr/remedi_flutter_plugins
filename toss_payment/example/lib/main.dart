@@ -165,7 +165,15 @@ class _MyHomePageState extends State<MyHomePage> {
           return Container(
             margin: const EdgeInsets.only(top: 110),
             child: PaymentWebView(
-                title: _product.name, paymentRequestUrl: request.url),
+              title: _product.name,
+              paymentRequestUrl: request.url,
+              onPageStarted: (url) {
+                dev.log('onPageStarted.url = $url', name: "PaymentWebView");
+              },
+              onPageFinished: (url) {
+                dev.log('onPageFinished.url = $url', name: "PaymentWebView");
+              },
+            ),
           );
         });
     dev.log('ret = $ret', name: '_showPayment');
