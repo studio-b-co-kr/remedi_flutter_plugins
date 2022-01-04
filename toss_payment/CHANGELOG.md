@@ -1,3 +1,11 @@
-## 0.0.1
+## 0.1.2
+ update change log
 
+## 0.1.1
+ change example app's package name
+
+## 0.1.0
+ update readme and refactor package
+
+## 0.0.1
  initial release
