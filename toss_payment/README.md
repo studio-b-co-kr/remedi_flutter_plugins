@@ -13,18 +13,20 @@ and the Flutter guide for
 
 # Toss Payments Flutter plugin.
 
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+플러터 앱에서 토스페이먼츠를 사용해서 앱내 결제기능을 구현하고자 하는 분들에게 도움이 되고자 합니다.    
+토스페이먼츠에 대한 자세한 사항은 "https://docs.tosspayments.com/"를 참고해주세요.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+1. 결제창 연동하기 및 웹뷰를 사용한 외부 앱 연동.
 
 ## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### 1. IOS
+  
+  ```dart
+  ```
+  
+### 3. Android
 
 ## Usage
 
