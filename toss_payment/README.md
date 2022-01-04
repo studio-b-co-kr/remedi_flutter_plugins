@@ -14,7 +14,7 @@ and the Flutter guide for
 # Toss Payments Flutter plugin.
 
 플러터 앱에서 토스페이먼츠를 사용해서 앱내 결제기능을 구현하고자 하는 분들에게 도움이 되고자 합니다.    
-토스페이먼츠에 대한 자세한 사항은 "https://docs.tosspayments.com/"를 참고해주세요.
+토스페이먼츠에 대한 자세한 사항은 "https://docs.tosspayments.com/" 를 참고해주세요.
 
 ## Features
 
