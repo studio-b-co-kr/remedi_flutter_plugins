@@ -1,6 +1,8 @@
 import 'dart:developer' as dev;
 
 extension UriExtension on Uri {
+  /// Android Intent 를 파싱합니다.
+  /// 안드로이드일 경우만 사용해주세요.
   static Uri fromToss(String uriString) {
     Uri uri = Uri.parse(uriString);
     if (uri.scheme == 'intent') {

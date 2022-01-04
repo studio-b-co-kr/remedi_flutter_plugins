@@ -7,6 +7,7 @@ import 'package:toss_payment/extensions/uri_extendsion.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+/// Payment 웹화면.
 class PaymentWebView extends StatefulWidget {
   final String? title;
   final Uri paymentRequestUrl;

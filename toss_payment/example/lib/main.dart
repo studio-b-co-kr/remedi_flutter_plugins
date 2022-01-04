@@ -1,12 +1,12 @@
 import 'dart:developer' as dev;
 
+import 'package:example/models/payment_request.dart';
 import 'package:example/models/product.dart';
 import 'package:example/services/mock_server.dart';
 import 'package:example/widgets/order_widget.dart';
 import 'package:example/widgets/product_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:toss_payment/feature/webview/payment_webview.dart';
-import 'package:toss_payment/models/payment_request.dart';
 
 void main() async {
   /// 예시를 위해 만든 mock server 입니다.

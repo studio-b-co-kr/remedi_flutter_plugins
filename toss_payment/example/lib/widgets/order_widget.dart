@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:example/models/payment_request.dart';
 import 'package:example/models/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:toss_payment/models/payment_request.dart';
 
 class OrderWidget extends StatelessWidget {
   final String payBy;
