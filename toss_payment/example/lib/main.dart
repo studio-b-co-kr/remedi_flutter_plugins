@@ -173,6 +173,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 extension PaymentRequestExtension on PaymentRequest {
   Uri get url {
-    return Uri.http("localhost:8080", "", json);
+    return Uri.http("localhost:8080", "payment", json);
   }
 }

@@ -1,7 +1,10 @@
 import 'dart:developer' as dev;
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:toss_payment/extensions/uri_extendsion.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentWebView extends StatefulWidget {
@@ -50,6 +53,28 @@ class _PaymentWebViewState extends State<PaymentWebView> {
         initialUrl: widget.paymentRequestUrl.toString(),
         onPageStarted: (url) {
           dev.log(url, name: "WebView");
+        },
+        navigationDelegate: (request) async {
+          Uri uri = Uri.parse(request.url);
+          if (uri.scheme == 'http' ||
+              uri.scheme == 'https' ||
+              uri.scheme == 'about') {
+            return NavigationDecision.navigate;
+          }
+
+          dev.log("NavigationDecision = ${request.url}",
+              name: "WebView.navigationDelegate");
+
+          String launchUrl = request.url;
+
+          if (Platform.isAndroid) {
+            Uri tossPayment = UriExtension.fromToss(request.url);
+            launchUrl = tossPayment.toString();
+          }
+
+          launch(launchUrl);
+
+          return NavigationDecision.prevent;
         },
         javascriptMode: JavascriptMode.unrestricted,
       ),

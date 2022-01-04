@@ -65,14 +65,15 @@ class OrderWidget extends StatelessWidget {
         break;
       case '가상계좌':
         ret = PaymentRequest.virtualAccount(
-            amount: product.price,
-            orderId: _generateOrderId(),
-            orderName: product.name,
-            customerName: _customerName,
-            validHours: 24,
-            cashReceipt: {
-              'type': '소득공제',
-            });
+          amount: product.price,
+          orderId: _generateOrderId(),
+          orderName: product.name,
+          customerName: _customerName,
+          // validHours: 24,
+          // cashReceipt: {
+          //   'type': '소득공제',
+          // },
+        );
         break;
       case '계좌이체':
         ret = PaymentRequest.accountTransfer(
@@ -118,15 +119,15 @@ class OrderWidget extends StatelessWidget {
   }
 
   String _generateCustomerKey() {
-    var ret = base64Encode([
-      Random(DateTime.now().millisecond).nextInt(9),
-      Random(DateTime.now().millisecond).nextInt(9),
-      Random(DateTime.now().millisecond).nextInt(9),
-      Random(DateTime.now().millisecond).nextInt(9),
-      Random(DateTime.now().millisecond).nextInt(9),
-      Random(DateTime.now().millisecond).nextInt(9),
-    ]).toString();
-    return ret;
+    // var ret = base64Encode([
+    //   Random(DateTime.now().millisecond).nextInt(9),
+    //   Random(DateTime.now().millisecond).nextInt(9),
+    //   Random(DateTime.now().millisecond).nextInt(9),
+    //   Random(DateTime.now().millisecond).nextInt(9),
+    //   Random(DateTime.now().millisecond).nextInt(9),
+    //   Random(DateTime.now().millisecond).nextInt(9),
+    // ]).toString();
+    return 'Y12n2V0fIRS_DUQyp6dsF';
   }
 
   String get _customerName => "레토스";

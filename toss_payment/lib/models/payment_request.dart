@@ -34,8 +34,8 @@ class PaymentRequest {
     this.cardCompany,
 
     // virtual account
-    this.validHours,
-    this.cashReceipt,
+    // this.validHours,
+    // this.cashReceipt,
     // account transfer
     this.bank,
   });
@@ -67,12 +67,12 @@ class PaymentRequest {
     if (cardCompany != null) {
       ret.addAll({"card_company": cardCompany});
     }
-    if (validHours != null) {
-      ret.addAll({"valid_hours": "$validHours"});
-    }
-    if (cashReceipt != null) {
-      ret.addAll({"cash_receipt": cashReceipt});
-    }
+    // if (validHours != null) {
+    //   ret.addAll({"valid_hours": "$validHours"});
+    // }
+    // if (cashReceipt != null) {
+    //   ret.addAll({"cash_receipt": cashReceipt});
+    // }
 
     if (bank != null) {
       ret.addAll({"bank": bank});
@@ -104,7 +104,7 @@ class PaymentRequest {
     required String cardCompany,
   }) {
     return PaymentRequest(
-      payBy: "카드",
+      payBy: "카드앱바로열기",
       amount: amount,
       orderId: orderId,
       orderName: orderName,
@@ -118,7 +118,7 @@ class PaymentRequest {
     required String customerKey,
   }) {
     return PaymentRequest(
-      payBy: "카드",
+      payBy: "카드자동결제",
       customerKey: customerKey,
     );
   }
@@ -128,17 +128,18 @@ class PaymentRequest {
     required String orderId,
     required String orderName,
     required String customerName,
-    int? validHours,
-    Map<String, String>? cashReceipt,
+    // int? validHours,
+    // Map<String, String>? cashReceipt,
   }) {
     return PaymentRequest(
-        payBy: "가상계좌",
-        amount: amount,
-        orderId: orderId,
-        orderName: orderName,
-        customerName: customerName,
-        validHours: validHours,
-        cashReceipt: cashReceipt);
+      payBy: "가상계좌",
+      amount: amount,
+      orderId: orderId,
+      orderName: orderName,
+      customerName: customerName,
+      // validHours: validHours,
+      // cashReceipt: cashReceipt,
+    );
   }
 
   factory PaymentRequest.accountTransfer({
@@ -185,5 +186,59 @@ class PaymentRequest {
       orderName: orderName,
       customerName: customerName,
     );
+  }
+
+  static PaymentRequest? fromJson(json) {
+    PaymentRequest? ret;
+    switch (json['pay_by']) {
+      case "카드":
+        ret = PaymentRequest.card(
+            amount: int.parse(json['amount']),
+            orderId: json['order_id'],
+            orderName: json['order_name'],
+            customerName: json['customer_name']);
+        break;
+      case "카드자동결제":
+        ret = PaymentRequest.billingAuth(customerKey: json['customer_key']);
+        break;
+      case "카드앱바로열기":
+        ret = PaymentRequest.cardDirect(
+            amount: int.parse(json['amount']),
+            orderId: json['order_id'],
+            orderName: json['order_name'],
+            customerName: json['customer_name'],
+            cardCompany: json['card_company']);
+        break;
+      case "가상계좌":
+        ret = PaymentRequest.virtualAccount(
+            amount: int.parse(json['amount']),
+            orderId: json['order_id'],
+            orderName: json['order_name'],
+            customerName: json['customer_name']);
+        break;
+      case "계좌이체":
+        ret = PaymentRequest.accountTransfer(
+            amount: int.parse(json['amount']),
+            orderId: json['order_id'],
+            orderName: json['order_name'],
+            customerName: json['customer_name'],
+            bank: json['bank']);
+        break;
+      case "휴대폰":
+        ret = PaymentRequest.phone(
+            amount: int.parse(json['amount']),
+            orderId: json['order_id'],
+            orderName: json['order_name'],
+            customerName: json['customer_name']);
+        break;
+      case "도서문화상품권":
+        ret = PaymentRequest.giftCard(
+            amount: int.parse(json['amount']),
+            orderId: json['order_id'],
+            orderName: json['order_name'],
+            customerName: json['customer_name']);
+        break;
+    }
+    return ret;
   }
 }
