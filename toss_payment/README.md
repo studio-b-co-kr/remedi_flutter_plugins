@@ -24,8 +24,28 @@ and the Flutter guide for
 외부 앱 연동을 위해서는 각 OS별로 환경 세팅을 해줘야 합니다.
 
 ### 1. IOS
+  Info.plist에 외부앱 실행을 위한 Scheme 추가.
   
   ```dart
+  <key>LSApplicationQueriesSchemes</key>
+  <array>
+      <string>supertoss</string> <!-- 토스페이 -->
+      <string>mpocket.online.ansimclick</string> <!-- 삼성카드앱카드 -->
+      <string>hdcardappcardansimclick</string> <!-- 현대카드앱카드 -->
+      <string>smhyundaiansimclick</string> <!-- 현대카드공인인증서 -->
+      <string>wooripay</string> <!-- 우리카드앱카드 -->
+      <string>shinhan-sr-ansimclick</string> <!-- 신한카드앱카드 -->
+      <string>smshinhanansimclick</string> <!-- 신한카드공인인증서 -->
+      <string>kb-acp</string> <!-- 국민카드앱카드 -->
+      <string>lottesmartpay</string> <!-- 롯데카드모바일결제 -->
+      <string>lotteappcard</string> <!-- 롯데카드앱카드 -->
+      <string>cloudpay</string> <!-- 하나카드앱카드 -->
+      <string>nhappvardansimclick</string> <!-- 농협카드-앱카드 -->
+      <string>nonghyupcardansimclick</string> <!-- 농협카드공인인증서 -->
+      <string>citispay</string> <!-- 씨티카드앱카드 -->
+      <string>citicardappkr</string> <!-- 씨티카드공인인증서 -->
+      <string>ispmobile</string> <!-- ISP모바일 -->
+  </array>
   ```
   
 ### 3. Android
