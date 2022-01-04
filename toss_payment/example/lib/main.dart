@@ -9,6 +9,7 @@ import 'package:toss_payment/feature/webview/payment_webview.dart';
 import 'package:toss_payment/models/payment_request.dart';
 
 void main() async {
+  /// 예시를 위해 만든 mock server 입니다.
   await MockServer.startServer();
 
   runApp(const MyApp());
@@ -173,6 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 extension PaymentRequestExtension on PaymentRequest {
   Uri get url {
+    // TODO 토스페이를 위해 만든 Web 주소를 넣어주세요. 아래는 예시입니다.
     return Uri.http("localhost:8080", "payment", json);
   }
 }
