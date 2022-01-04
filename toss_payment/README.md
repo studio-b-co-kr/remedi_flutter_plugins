@@ -150,11 +150,8 @@ and the Flutter guide for
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+PaymentWebView(title: "결제 페이지 타이틀", paymentRequestUrl: Uri.parse("결제 웹 페이지 주소"))
 ```
 
 ## Additional information
