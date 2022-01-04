@@ -21,12 +21,19 @@ and the Flutter guide for
 1. 결제창 연동하기 및 웹뷰를 사용한 외부 앱 연동.
 
 ## Getting started
+외부 앱 연동을 위해서는 각 OS별로 환경 세팅을 해줘야 합니다.
+
 ### 1. IOS
   
   ```dart
   ```
   
 ### 3. Android
+
+  ```dart
+  ```
+
+
 
 ## Usage
 
