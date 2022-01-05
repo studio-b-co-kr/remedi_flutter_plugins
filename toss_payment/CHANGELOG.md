@@ -1,3 +1,6 @@
+## 0.2.5
+ update license
+
 ## 0.2.4
  change env.
 

@@ -3,7 +3,7 @@ description:
   Toss Payment Flutter Plugin
   This plugin provides a payments method using toss in ios and android app.
 
-version: 0.2.4
+version: 0.2.5
 homepage: https://github.com/studio-b-co-kr/remedi_flutter_plugins
 repository: https://github.com/studio-b-co-kr/remedi_flutter_plugins
 
