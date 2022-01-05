@@ -188,6 +188,21 @@ class PaymentRequest {
     );
   }
 
+  factory PaymentRequest.tossPay({
+    required int amount,
+    required String orderId,
+    required String orderName,
+    required String customerName,
+  }) {
+    return PaymentRequest(
+      payBy: "토스결제",
+      amount: amount,
+      orderId: orderId,
+      orderName: orderName,
+      customerName: customerName,
+    );
+  }
+
   static PaymentRequest? fromJson(json) {
     PaymentRequest? ret;
     switch (json['pay_by']) {
@@ -233,6 +248,14 @@ class PaymentRequest {
         break;
       case "도서문화상품권":
         ret = PaymentRequest.giftCard(
+            amount: int.parse(json['amount']),
+            orderId: json['order_id'],
+            orderName: json['order_name'],
+            customerName: json['customer_name']);
+        break;
+
+      case "토스결제":
+        ret = PaymentRequest.tossPay(
             amount: int.parse(json['amount']),
             orderId: json['order_id'],
             orderName: json['order_name'],

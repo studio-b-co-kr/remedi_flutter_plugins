@@ -1,3 +1,6 @@
+## 0.2.2
+ Update Comments amd add '토스페이' case to example
+
 ## 0.2.1
  add Widget dispose and tap close callbacks
 

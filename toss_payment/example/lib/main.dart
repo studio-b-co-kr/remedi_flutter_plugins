@@ -1,7 +1,7 @@
 import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
-import 'package:toss_payment/feature/webview/payment_webview.dart';
+import 'package:toss_payment/toss_payment.dart';
 
 import 'models/payment_request.dart';
 import 'models/product.dart';
@@ -145,6 +145,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     payBy: '도서문화상품권',
                   );
                   break;
+                case 7:
+                  ret = OrderWidget(
+                    title: '토스결제',
+                    product: _product,
+                    onTap: (request) {
+                      _showPayment(context, request);
+                    },
+                    payBy: '토스결제',
+                  );
+                  break;
               }
               return ret;
             }),
@@ -162,6 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
         enableDrag: false,
         isDismissible: false,
         builder: (context) {
+          bool success = false;
           return Container(
             margin: const EdgeInsets.only(top: 110),
             child: PaymentWebView(
@@ -172,12 +183,17 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               onPageFinished: (url) {
                 dev.log('onPageFinished.url = $url', name: "PaymentWebView");
+                // TODO something to decide the payment is successful or not.
+                success = url.contains('success');
+              },
+              onDisposed: () {},
+              onTapCloseButton: () {
+                Navigator.of(context).pop(success);
               },
             ),
           );
         });
     dev.log('ret = $ret', name: '_showPayment');
-    // TODO check success or not.
   }
 }
 

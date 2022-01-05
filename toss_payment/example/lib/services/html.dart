@@ -25,6 +25,9 @@ class PaymentHtml {
       case "도서문화상품권":
         ret = giftCard(request);
         break;
+      case "토스결제":
+        ret = tossPay(request);
+        break;
     }
 
     return ret;
@@ -162,6 +165,28 @@ class PaymentHtml {
   }
 
   static String giftCard(PaymentRequest request) {
+    return '''<html>
+      <head>
+   <script src="https://js.tosspayments.com/v1"></script>
+   </head>
+   <body>
+   <script>
+   var tossPayments = TossPayments('test_ck_OEP59LybZ8Bdv6A1JxkV6GYo7pRe')
+   tossPayments.requestPayment('${request.payBy}', {
+   amount: ${request.amount},
+   orderId: '${request.orderId}',
+   orderName: '${request.orderName}',
+   customerName: '${request.customerName}',
+   successUrl: window.location.origin + '/success',
+   failUrl: window.location.origin + '/fail',
+   })
+   </script>
+   </body>
+   </html>
+   ''';
+  }
+
+  static String tossPay(PaymentRequest request) {
     return '''<html>
       <head>
    <script src="https://js.tosspayments.com/v1"></script>

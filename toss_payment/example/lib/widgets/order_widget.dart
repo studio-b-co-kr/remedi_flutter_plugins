@@ -100,6 +100,14 @@ class OrderWidget extends StatelessWidget {
           customerName: _customerName,
         );
         break;
+      case '토스결제':
+        ret = PaymentRequest.tossPay(
+          amount: product.price,
+          orderId: _generateOrderId(),
+          orderName: product.name,
+          customerName: _customerName,
+        );
+        break;
       default:
         break;
     }

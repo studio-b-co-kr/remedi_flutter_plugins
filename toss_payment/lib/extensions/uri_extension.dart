@@ -1,9 +1,9 @@
 import 'dart:developer' as dev;
 
+/// Android intent uri 를 flutter 에서 사용할 수 있도록 parsing 합니다.
+/// 다시 만들어진 uri 는 url_launcher의 launch()를 통해서 사용할 수 있습니다.
 extension UriExtension on Uri {
-  /// Android Intent 를 파싱합니다.
-  /// 안드로이드일 경우만 사용해주세요.
-  static Uri fromToss(String uriString) {
+  static Uri androidIntentUrlOrigin(String uriString) {
     Uri uri = Uri.parse(uriString);
     if (uri.scheme == 'intent') {
       var firstSplits = uriString.split("#Intent;");
