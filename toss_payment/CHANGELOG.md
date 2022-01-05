@@ -1,5 +1,8 @@
+## 0.2.3
+ Update Comments
+
 ## 0.2.2
- Update Comments amd add '토스페이' case to example
+ Update Comments and add '토스결제' case to example
 
 ## 0.2.1
  add Widget dispose and tap close callbacks
