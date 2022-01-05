@@ -148,6 +148,33 @@ and the Flutter guide for
   </queries>
   ```
 
+### 추가 팁
+
+#### a. 안드로이드 웹에 접근되지 않을 때 
+usesCleartextTraffic 세팅을 true로 해주세요.
+
+android/app/main/AndroidManifest.xml
+```dart
+<application
+  ...
+  android:usesCleartextTraffic="true">
+  ...
+</application>
+```
+
+#### b. 안드로이드 12 이상에서 앱이 설치 혹은 실행되지 않을 때
+android:exported 를 "true"로 세팅해주세요.
+
+android/app/main/AndroidManifest.xml
+```dart
+<activity
+  android:name=".MainActivity"
+  ...
+  android:exported="true">
+...
+</activity>
+```
+
 ## Usage
 
 "PaymentWebView" 을 통해서 결제창과 연동할 수 있습니다.
