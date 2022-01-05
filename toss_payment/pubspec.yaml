@@ -2,7 +2,7 @@ name: toss_payment
 description:
   Toss Payment Flutter Plugin
   웹뷰를 이용한 토스 페이먼츠를 사용해 앱내 결제 기능이 구현되어 있습니다.
-version: 0.2.2
+version: 0.2.3
 homepage: https://github.com/studio-b-co-kr/remedi_flutter_plugins
 repository: https://github.com/studio-b-co-kr/remedi_flutter_plugins
 
