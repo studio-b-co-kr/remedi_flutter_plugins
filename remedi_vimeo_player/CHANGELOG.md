@@ -1,3 +1,6 @@
+## 0.2.1
+* update plugins
+
 ## 0.1.6
 * migrate better player version to 0.0.73#2
 

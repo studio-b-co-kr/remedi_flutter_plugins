@@ -1,5 +1,5 @@
 name: remedi_linker
-version: 0.0.1
+version: 0.0.2
 homepage: 'https://github.com/studio-b-co-kr/remedi_flutter_plugins'
 repository: 'https://github.com/studio-b-co-kr/remedi_flutter_plugins'
 
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  url_launcher: ^6.0.9
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   flutter_test:

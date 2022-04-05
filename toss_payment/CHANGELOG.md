@@ -1,3 +1,6 @@
+## 0.2.6
+ update plugins
+
 ## 0.2.5
  update license
 
